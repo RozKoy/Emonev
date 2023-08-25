@@ -71,6 +71,13 @@ return function (App $app) {
 	    return view($response, 'user.home');
 	});
 		$app->get('/user-tambah', function (Request $request, Response $response, $args) {
-	    return view($response, 'user.add');
+		    return view($response, 'user.add');
+		});
+
+	$app->get('/tahun', function (Request $request, Response $response, $args) {
+	    return view($response, 'master.tahunHome');
+	});
+		$app->get('/tahun-tambah', function (Request $request, Response $response, $args) {
+	    return view($response, 'master.tahunAdd');
 	});
 };
