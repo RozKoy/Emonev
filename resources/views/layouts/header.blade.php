@@ -1,11 +1,16 @@
-<div class="bg-white rounded-lg p-1.5 shadow shadow-gray-300 flex">
+<div class="bg-white rounded-lg p-1.5 shadow shadow-gray-300 flex items-center">
 	<!-- drawer init and show -->
    <button class="hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 rounded-full p-2 focus:outline-none" type="button" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation" aria-controls="drawer-navigation">
    <svg data-v-5e2e69e4="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" tag="i" class="v-icon notranslate v-theme--light iconify iconify--bx" width="1em" height="1em" viewBox="0 0 24 24" style="font-size: 12px; height: 20px; width: 20px;"><path fill="currentColor" d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path></svg>
    </button>
 
+   <p class="text-gray-300">|</p>
+
+   <a href="/" class="w-10 mx-2">
+      <img src="./logo.png" alt="Logo Emonev">
+   </a>
+
    <a href="#" class="flex items-center hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 rounded-full p-2 focus:outline-none ml-auto">
-      <span class="text-xs mr-1.5 font-bold">Logout</span>
       <?xml version="1.0" encoding="utf-8"?>
       <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" 
           width="16px" height="16px" viewBox="0 0 52 52" enable-background="new 0 0 52 52" xml:space="preserve">
@@ -17,5 +22,6 @@
             c-0.6,0.6-0.6,1.5,0,2.1l2.1,2.1c0.6,0.6,1.5,0.6,2.1,0L49.6,27z"/>
       </g>
       </svg>
+      <span class="text-xs ml-1 font-bold">Logout</span>
    </a>
 </div>
