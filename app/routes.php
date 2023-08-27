@@ -78,6 +78,48 @@ return function (App $app) {
 	    return view($response, 'master.tahunHome');
 	});
 		$app->get('/tahun-tambah', function (Request $request, Response $response, $args) {
-	    return view($response, 'master.tahunAdd');
+		    return view($response, 'master.tahunAdd');
+		});
+
+	$app->get('/wilayah', function (Request $request, Response $response, $args) {
+	    return view($response, 'master.wilayahHome');
 	});
+		$app->get('/wilayah-tambah', function (Request $request, Response $response, $args) {
+		    return view($response, 'master.wilayahAdd');
+		});
+
+	$app->get('/dinas', function (Request $request, Response $response, $args) {
+	    return view($response, 'master.dinasHome');
+	});
+		$app->get('/dinas-tambah', function (Request $request, Response $response, $args) {
+		    return view($response, 'master.dinasAdd');
+		});
+
+	$app->get('/satuan', function (Request $request, Response $response, $args) {
+	    return view($response, 'master.satuanHome');
+	});
+		$app->get('/satuan-tambah', function (Request $request, Response $response, $args) {
+		    return view($response, 'master.satuanAdd');
+		});
+
+	$app->get('/sumber-dana', function (Request $request, Response $response, $args) {
+	    return view($response, 'master.sumberDanaHome');
+	});
+		$app->get('/sumber-dana-tambah', function (Request $request, Response $response, $args) {
+		    return view($response, 'master.sumberDanaAdd');
+		});
+
+	$app->get('/urusan', function (Request $request, Response $response, $args) {
+	    return view($response, 'master.urusanHome');
+	});
+		$app->get('/urusan-tambah', function (Request $request, Response $response, $args) {
+		    return view($response, 'master.urusanAdd');
+		});
+
+	$app->get('/bidang', function (Request $request, Response $response, $args) {
+	    return view($response, 'master.bidangHome');
+	});
+		$app->get('/bidang-tambah', function (Request $request, Response $response, $args) {
+		    return view($response, 'master.bidangAdd');
+		});
 };
