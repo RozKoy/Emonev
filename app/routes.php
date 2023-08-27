@@ -7,77 +7,84 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 
 return function (App $app) {
 
-	function view (Response $response, $template, $with = []) {
+	function view(Response $response, $template, $with = [])
+	{
 		$cache = __DIR__ . '/../cache';
 		$views = __DIR__ . '/../resources/views';
 
-		$blade = (new Blade($views, $cache)) -> make($template, $with);
+		$blade = (new Blade($views, $cache))->make($template, $with);
 
-		$response -> getBody() -> write($blade -> render());
+		$response->getBody()->write($blade->render());
 
 		return $response;
 	}
 
 	// <--- Route --->
 	$app->get('/', function (Request $request, Response $response, $args) {
-	    return view($response, 'home');
+		return view($response, 'home');
 	});
 
 	$app->get('/dpa', function (Request $request, Response $response, $args) {
-	    return view($response, 'dpa.home');
+		return view($response, 'dpa.home');
 	});
-		$app->get('/dpa-tambah', function (Request $request, Response $response, $args) {
-		    return view($response, 'dpa.addDpa');
-		});
-		$app->get('/dpa-tambah-sub-dpa', function (Request $request, Response $response, $args) {
-		    return view($response, 'dpa.addSubDpa');
-		});
-		$app->get('/dpa-tambah-rencana-penarikan', function (Request $request, Response $response, $args) {
-		    return view($response, 'dpa.addRencanaPenarikan');
-		});
-		$app->get('/dpa-tambah-tim', function (Request $request, Response $response, $args) {
-		    return view($response, 'dpa.addTim');
-		});
+	$app->get('/dpa-tambah', function (Request $request, Response $response, $args) {
+		return view($response, 'dpa.addDpa');
+	});
+	$app->get('/dpaAddBaru', function (Request $request, Response $response, $args) {
+		return view($response, 'dpa.addDpaBaru');
+	});
+	$app->get('/dpa-tambah-sub-dpa', function (Request $request, Response $response, $args) {
+		return view($response, 'dpa.addSubDpa');
+	});
+	$app->get('/dpa-tambah-rencana-penarikan', function (Request $request, Response $response, $args) {
+		return view($response, 'dpa.addRencanaPenarikan');
+	});
+	$app->get('/dpa-tambah-tim', function (Request $request, Response $response, $args) {
+		return view($response, 'dpa.addTim');
+	});
 
 	$app->get('/realisasi', function (Request $request, Response $response, $args) {
-	    return view($response, 'perencanaan.home');
+		return view($response, 'perencanaan.home');
 	});
-		$app->get('/realisasi-anggaran', function (Request $request, Response $response, $args) {
-		    return view($response, 'perencanaan.anggaran');
-		});
-		$app->get('/realisasi-anggaran-tambah', function (Request $request, Response $response, $args) {
-		    return view($response, 'perencanaan.add');
-		});
+	$app->get('/realisasi-anggaran', function (Request $request, Response $response, $args) {
+		return view($response, 'perencanaan.anggaran');
+	});
+	$app->get('/realisasi-anggaran-tambah', function (Request $request, Response $response, $args) {
+		return view($response, 'perencanaan.add');
+	});
 
 	$app->get('/laporan', function (Request $request, Response $response, $args) {
-	    return view($response, 'laporan.home');
+		return view($response, 'laporan.home');
 	});
-		$app->get('/laporan-detail', function (Request $request, Response $response, $args) {
-		    return view($response, 'laporan.detail');
-		});
+	$app->get('/laporan-detail', function (Request $request, Response $response, $args) {
+		return view($response, 'laporan.detail');
+	});
 
 	$app->get('/perencanaan-pembangunan', function (Request $request, Response $response, $args) {
-	    return view($response, 'pembangunan.home');
+		return view($response, 'pembangunan.home');
 	});
 
 	$app->get('/role', function (Request $request, Response $response, $args) {
-	    return view($response, 'role.home');
+		return view($response, 'role.home');
 	});
-		$app->get('/role-tambah', function (Request $request, Response $response, $args) {
-		    return view($response, 'role.add');
-		});
+	$app->get('/role-tambah', function (Request $request, Response $response, $args) {
+		return view($response, 'role.add');
+	});
 
 	$app->get('/user', function (Request $request, Response $response, $args) {
-	    return view($response, 'user.home');
+		return view($response, 'user.home');
 	});
-		$app->get('/user-tambah', function (Request $request, Response $response, $args) {
-		    return view($response, 'user.add');
-		});
+	$app->get('/user-tambah', function (Request $request, Response $response, $args) {
+		return view($response, 'user.add');
+	});
 
 	$app->get('/tahun', function (Request $request, Response $response, $args) {
-	    return view($response, 'master.tahunHome');
+		return view($response, 'master.tahunHome');
 	});
-		$app->get('/tahun-tambah', function (Request $request, Response $response, $args) {
-	    return view($response, 'master.tahunAdd');
+	$app->get('/tahun-tambah', function (Request $request, Response $response, $args) {
+		return view($response, 'master.tahunAdd');
+	});
+	$app->get('/tahunBaru', function (Request $request, Response $response, $args) {
+		return view($response, 'master.tahunDashboard');
 	});
 };
